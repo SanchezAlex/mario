@@ -1,0 +1,65 @@
+$icons: (0:0)
+$icons: map-merge($icons,('clouds-large': (X: 0px, Y:-190px, W: 1920px, H: 300px, TW: 3840px, TH: 1140px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('clouds-small': (X: 0px, Y:-500px, W: 1920px, H: 300px, TW: 3840px, TH: 1140px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('ground': (X: 0px, Y:0px, W: 3840px, H: 180px, TW: 3840px, TH: 1140px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('mario': (X: 0px, Y:-810px, W: 1172px, H: 330px, TW: 3840px, TH: 1140px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+//
+//.icon-clouds-large
+//  width: 1920px
+//  height: 300px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px -190px
+//
+//.icon-clouds-small
+//  width: 1920px
+//  height: 300px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px -500px
+//
+//.icon-ground
+//  width: 3840px
+//  height: 180px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px 0px
+//
+//.icon-mario
+//  width: 1172px
+//  height: 330px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px -810px
+//
