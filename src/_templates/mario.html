@@ -5,10 +5,27 @@ title: Mario
 
 {% block content %}
 
-<button class="btn left">left</button>
-<button class="btn right">right</button>
-<button class="btn jump-left">jump left</button>
-<button class="btn jump-right">jump right</button>
+<div class="control">
+  <div class="control__browser">
+    <h3>Chrome: <span>alt +</span> </h3>
+  </div>
+  <div class="control__browser">
+    <h3>Firefox: <span>shift + alt +</span></h3>
+  </div>
+  <div class="control__browser">
+    <h3>Opera: <span>shift + esc +</span></h3>
+  </div>
+  <div class="control__browser">
+    <h3>Browsers on Mac: <span>ctrl + alt +</span></h3>
+  </div>
+</div>
+
+<button class="btn left" accesskey="a">a<br><span>left</span></button>
+<button class="btn right" accesskey="s">s<br><span>right</span></button>
+<button class="btn jump-left" accesskey="k">k<br><span>jump left</span></button>
+<button class="btn jump-right" accesskey="l">l<br><span>jump right</span></button>
+<button class="btn pause" accesskey="p">p<br><span>pause</span></button>
+
 
 <div class="mario">
   <div class="mario__wraper">

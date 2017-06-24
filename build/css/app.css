@@ -104,6 +104,11 @@ html, body {
   background-color: #94cc56;
 }
 
+.btn span {
+  color: blue;
+  font-size: 8px;
+}
+
 .mario {
   position: relative;
   width: 100vw;
@@ -130,10 +135,15 @@ html, body {
   background-image: url("../img/sprite.png");
   background-position: 0px -500px;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
   animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
   animation-duration: 58.5s;
+  -webkit-animation-duration: 58.5s;
   animation-name: clouds-small;
+  -webkit-animation-name: clouds-small;
 }
 
 .mario__wraper:after {
@@ -145,10 +155,15 @@ html, body {
   background-image: url("../img/sprite.png");
   background-position: 0px -190px;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
   animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
   animation-duration: 47.1s;
+  -webkit-animation-duration: 47.1s;
   animation-name: clouds-large;
+  -webkit-animation-name: clouds-large;
 }
 
 .mario__hero {
@@ -163,7 +178,9 @@ html, body {
   background-image: url("../img/sprite.png");
   background-position: 0px -810px;
   animation: walk 0.5s steps(1, end) infinite;
+  -webkit-animation: walk 0.5s steps(1, end) infinite;
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .mario:after {
@@ -176,98 +193,150 @@ html, body {
   position: absolute;
   bottom: -120px;
   animation: background 5s;
+  -webkit-animation: background 5s;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
   animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+.control {
+  position: absolute;
+  top: 1%;
+  right: 20%;
+  padding: 10px;
+  z-index: 20;
+  background-color: rgba(58, 237, 23, 0.8);
+}
+
+.control h3 {
+  color: #2d22ed;
+  font-weight: 400;
+}
+
+.control h3 span {
+  color: #ff0017;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.control__browser {
+  margin-bottom: 10px;
+}
+
+.pause {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  z-index: 25;
 }
 
 .right {
   position: absolute;
-  top: 5%;
-  right: 1%;
+  top: 1%;
+  right: 2%;
   z-index: 25;
 }
 
 .right:focus ~ .mario .mario__wraper {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .right:focus ~ .mario .mario__wraper:before, .right:focus ~ .mario .mario__wraper:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .right:focus ~ .mario .mario__wraper .mario__hero {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .right:focus ~ .mario:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .left {
   position: absolute;
   top: 1%;
-  right: 1%;
+  right: 10%;
   z-index: 25;
 }
 
 .left:focus ~ .mario .mario__wraper {
   animation-name: background-back;
+  -webkit-animation-name: background-back;
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .left:focus ~ .mario .mario__wraper:before, .left:focus ~ .mario .mario__wraper:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .left:focus ~ .mario .mario__wraper .mario__hero {
   transform: rotateY(180deg) translateX(50%);
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .left:focus ~ .mario:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .jump-right {
   position: absolute;
-  top: 13%;
+  top: 12%;
   right: 1%;
   z-index: 25;
 }
 
 .jump-right:focus ~ .mario .mario__wraper:before, .jump-right:focus ~ .mario .mario__wraper:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .jump-right:focus ~ .mario .mario__wraper .mario__hero {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
   animation: walk 0.5s steps(1, end) infinite, jump 1s ease;
+  -webkit-animation: walk 0.5s steps(1, end) infinite, jump 1s ease;
 }
 
 .jump-right:focus ~ .mario:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .jump-left {
   position: absolute;
-  top: 9%;
-  right: 1%;
+  top: 12%;
+  right: 9%;
   z-index: 25;
 }
 
 .jump-left:focus ~ .mario .mario__wraper:before, .jump-left:focus ~ .mario .mario__wraper:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .jump-left:focus ~ .mario .mario__wraper .mario__hero {
-  animation-play-state: running;
   transform: rotateY(180deg) translateX(50%);
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
   animation: walk 0.5s steps(1, end) infinite, jump 1s ease;
+  -webkit-animation: walk 0.5s steps(1, end) infinite, jump 1s ease;
 }
 
 .jump-left:focus ~ .mario:after {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 @keyframes walk {
